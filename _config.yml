@@ -22,7 +22,7 @@ author_image: "/assets/images/Profile_pic.jpg"
 
 paginate:	5
 
-url: "http://jonsungwoo.github.io/jon-blog" # the base hostname & protocol for your site
+url: "https://jonsungwoo.github.io/jon-blog" # the base hostname & protocol for your site
 baseurl: ""
 #used to display twitter cards
 #twitter_handle: ''
