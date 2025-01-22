@@ -38,3 +38,6 @@ This is an [example link](http://example.com/ "With a Title").
 > - Apple
 > - Banana
 > - Plum
+
+I wonder `if latex` works
+$$ x + y $$
