@@ -289,6 +289,7 @@ DEPENDENCIES
   bourbon
   github-pages
   jemoji
+  kramdown-parser-gfm
 
 BUNDLED WITH
    2.5.23

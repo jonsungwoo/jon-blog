@@ -27,6 +27,16 @@ baseurl: ""
 #used to display twitter cards
 #twitter_handle: ''
 
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+highlighter: rouge
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
+  
 #fill in disqus shortname to use disqus
 #disqus: disqus-shortname
 
@@ -61,3 +71,5 @@ social:
 #    share_url:
 #    share_title:
 #    share_link:
+
+
