@@ -10,7 +10,7 @@ description: > # this means to ignore newlines until "email:"
 
 email: tobezer@gmail.com
 #blog logo
-logo: "/assets/images/Profile_pic.jpg"
+logo: "/assets/images/Sungwoo Logo.jpg"
 float_logo: true # true, false (default)
 
 # blog cover
