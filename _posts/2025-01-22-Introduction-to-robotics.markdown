@@ -14,7 +14,7 @@ mathjax: true
 In this page we will be learning about techniques for making a quadrotor hover. We will first start off with easy 2D example, moving toward to 3D examples. Now, let's get started!
 
 ## Quadrotor constrained to move along y-axis
-![Simple y-axis contstrained Quadrotor](/assets/article_images/2025-01-22-Introduction-to-robotics/image.jpg)
+![Simple y-axis contstrained Quadrotor]({{ site.baseurl }}/assets/article_images/2025-01-22-Introduction-to-robotics/image.jpg)
 
 Let's say we have a drone like above. It has one Degree of Freedom(DoF) Drone because it can only move to one direction, y direction (up and down). 
 
@@ -22,28 +22,27 @@ Let's say we have a drone like above. It has one Degree of Freedom(DoF) Drone be
 
 We can define the equation of motion(EoM) of the system through Newton's Second Law:
 
-$ m\ddot{y} = F_1 + F_2 - mg $
+\\( m\ddot{y} = F_1 + F_2 - mg \\)
 
-where $F_1$ and $F_2$ are forces from the propeller. Then, we use symbols $ \triangleq or \doteq $ to define equations simpler. 
+where \\(F_1\\) and \\(F_2\\) are forces from the propeller. Then, we use symbols \\( \triangleq or \doteq \\) to define equations simpler. 
 
-So, Define: $ u_1 \triangleq F_1 + F_2 $. 
+So, Define: \\( u_1 \triangleq F_1 + F_2 \\). 
 
 Thus, we can conclude the EoM as below:
-
-$ \ddot{y} = \frac{u_1}{m} - g \cdots (1)$
+\\[ \ddot{y} = \frac{u_1}{m} - g \cdots (1)\\]
 
 ## Quadrotor constrained to x and y-axis
-![2 Dim 3DoF Drone](/assets/article_images/2025-01-22-Introduction-to-robotics/image copy.jpg)
+![2 Dim 3DoF Drone]({{ site.baseurl }}/assets/article_images/2025-01-22-Introduction-to-robotics/image copy.jpg)
 
-Since the drone now can go in two dimensions, three parameters $x, y, \theta$ are used for EoM. 
+Since the drone now can go in two dimensions, three parameters \\(x, y, \theta\\) are used for EoM. 
 
 \\[ \ddot{x} = -\frac{u_1}{m} \cdot \sin{\theta} \\]
 \\[ \ddot{y} = \frac{u_1}{m} \cdot \cos{\theta} - g \\]
 \\[ \ddot{\theta} = \frac{(F_2 - F_1) \cdot L}{I} \\]
 
-*$I$ : Moment of Inertia (Geometry & mass distribution)
+*\\(I\\) : Moment of Inertia (Geometry & mass distribution)
 
-In this equation we can define: $ u_2 \triangleq (F_2 - F_1) \cdot L$. Which is net moment/torque from propellers. 
+In this equation we can define: \\( u_2 \triangleq (F_2 - F_1) \cdot L\\). Which is net moment/torque from propellers. 
 Thus we can conclude:
 
 \\[ \ddot{x} = -\frac{u_1}{m} \cdot \sin{\theta} \cdots (2a)\\]
@@ -51,7 +50,7 @@ Thus we can conclude:
 \\[ \ddot{\theta} = \frac{u_2}{I} \cdots (2c)\\]
 
 Now that we have 2nd order equations, we now can find first order diff by defining:
-$v_x \triangleq \dot{x}, v_y \triangleq \dot{y}, \omega \triangleq \dot{\theta}$
+\\(v_x \triangleq \dot{x}, v_y \triangleq \dot{y}, \omega \triangleq \dot{\theta}\\)
 
 Thus, if we change this into the **First Ordinary Differential Equation** we get:
 \\[ \dot{x} = v_x \\]
@@ -77,28 +76,28 @@ According to the Newton Third Law:
 \\[ F_{AB} = -F_{BA} \\]
 Thus we can write Thrust equation as:
 \\[ F = k_f \cdot (rotation speed of prop)^2 \\]
-*$k_f$ : constant of **thrust coefficient**
+*\\(k_f\\) : constant of **thrust coefficient**
 
 `Thrust Coefficient` is dependent on the geometry of propeller
 
-We can attain $k_f$ empirically by measuring slope from **thrust** and the **propeller speed**. 
+We can attain \\(k_f\\) empirically by measuring slope from **thrust** and the **propeller speed**. 
 
-3 Physical Parameters are: mass (m), Inertia(I), $k_f$
+3 Physical Parameters are: mass (m), Inertia(I), \\(k_f\\)
 
 ## 3D Quadrotor
 <br>
 3D Quadrotor has 6 DoF: Position (x, y, z) and orientation (Euler Angles)
 > Euler Angles are angles that are attached to the drone
 
-![Axes for quadrotor; source: Bitcraze.io](/assets/article_images/2025-01-22-Introduction-to-robotics/image copy 2.jpg)
+![Axes for quadrotor; source: Bitcraze.io]({{ site.baseurl }}/assets/article_images/2025-01-22-Introduction-to-robotics/image copy 2.jpg)
 
-Here $\bar{b}_x$ : forward, $\bar{b}_y$ : left, $\bar{b}_x$ : up. 
+Here \\(\bar{b}_x\\) : forward, \\(\bar{b}_y\\) : left, \\(\bar{b}_x\\) : up. 
 
-This is the way we get roll($\phi$), pitch($\theta$), yaw($\psi$)
+This is the way we get roll(\\(\phi\\)), pitch(\\(\theta\\)), yaw(\\(\psi\\))
 1. Align with I
-2. Rotate B about $\bar{e}_x$ by $\phi$
-3. Rotate B about $\bar{e}_y$ by $\theta$
-4. Rotate B about $\bar{e}_z$ by $\psi$
+2. Rotate B about \\(\bar{e}_x\\) by \\(\phi\\)
+3. Rotate B about \\(\bar{e}_y\\) by \\(\theta\\)
+4. Rotate B about \\(\bar{e}_z\\) by \\(\psi\\)
 
 Also, there are 12 convention of Euler Angles:
 1. Space 1-2-3 convention 
@@ -111,15 +110,15 @@ Also, there are 12 convention of Euler Angles:
 
 #### States for 3D Quadrotor
 <br>
-$\dot{\bar{x}} = f(\bar{x}, \bar{u})$
-*where $\bar{x}$ is state and $\bar{u}$ is control input
+\\(\dot{\bar{x}} = f(\bar{x}, \bar{u})\\)
+*where \\(\bar{x}\\) is state and \\(\bar{u}\\) is control input
 
 State:
 
 $$ \bar{x} = \begin{bmatrix} x \\ y \\ z \\ \phi \\ \theta \\ \psi \\ \dot{x} \\ \dot{y} \\ \dot{z} \\ p \\ q \\ r \end{bmatrix} $$
 
 Control Input:
-We can use: $F_1, F_2, F_3, F_4$
+We can use: \\(F_1, F_2, F_3, F_4\\)
 But we normally use this for convenience:
 
 $$ \bar{u} = \begin{cases} 
