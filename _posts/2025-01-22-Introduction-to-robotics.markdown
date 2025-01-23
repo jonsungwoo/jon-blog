@@ -14,7 +14,7 @@ mathjax: true
 In this page we will be learning about techniques for making a quadrotor hover. We will first start off with easy 2D example, moving toward to 3D examples. Now, let's get started!
 
 ## Quadrotor constrained to move along y-axis
-![Simple y-axis contstrained Quadrotor](/assets/article_images/2025-01-22-Introduction-to-robotics/image.png)
+![Simple y-axis contstrained Quadrotor](/assets/article_images/2025-01-22-Introduction-to-robotics/image.jpg)
 
 Let's say we have a drone like above. It has one Degree of Freedom(DoF) Drone because it can only move to one direction, y direction (up and down). 
 
@@ -33,7 +33,7 @@ Thus, we can conclude the EoM as below:
 $ \ddot{y} = \frac{u_1}{m} - g \cdots (1)$
 
 ## Quadrotor constrained to x and y-axis
-![2 Dim 3DoF Drone](/assets/article_images/2025-01-22-Introduction-to-robotics/image copy.png)
+![2 Dim 3DoF Drone](/assets/article_images/2025-01-22-Introduction-to-robotics/image copy.jpg)
 
 Since the drone now can go in two dimensions, three parameters $x, y, \theta$ are used for EoM. 
 
@@ -90,7 +90,7 @@ We can attain $k_f$ empirically by measuring slope from **thrust** and the **pro
 3D Quadrotor has 6 DoF: Position (x, y, z) and orientation (Euler Angles)
 > Euler Angles are angles that are attached to the drone
 
-![Axes for quadrotor; source: Bitcraze.io](/assets/article_images/2025-01-22-Introduction-to-robotics/image copy 2.png)
+![Axes for quadrotor; source: Bitcraze.io](/assets/article_images/2025-01-22-Introduction-to-robotics/image copy 2.jpg)
 
 Here $\bar{b}_x$ : forward, $\bar{b}_y$ : left, $\bar{b}_x$ : up. 
 
